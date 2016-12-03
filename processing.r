@@ -15,10 +15,10 @@ library(schoRsch)
 # acquire data ------------------------------------------------------------
 
 
-#gender_science_data_2003 <- read.delim("/Users/Ian/Dropbox overflow/Data/Gender-Science IAT raw data 2003-2015/iat2015.txt")
+#gender_science_data_2003 <- read.delim("/Users/Ian/Dropbox overflow/Data/Gender-Science IAT raw data 2003-2015/iat2003.txt")
 
-#save(gender_science_data_2003, file = "/Users/Ian/git/project-implicit-gender-science-IAT-data-reanalysis/Gender-Science IAT raw data 2003.RData")
-load(file = "/Users/Ian/git/project-implicit-gender-science-IAT-data-reanalysis/Gender-Science IAT raw data 2003.RData")
+#save(gender_science_data_2003, file = "/Users/Ian/Dropbox overflow/Data/Gender-Science IAT raw data 2003.RData")
+load(file = "/Users/Ian/Dropbox overflow/Data/Gender-Science IAT raw data 2003.RData")
 
 
 # Ss with complete data ---------------------------------------------------
@@ -130,6 +130,7 @@ for(i in 1:N){
 }
 PI <- plogis(PI)
 
+# Returns:
 # Warning messages:
 # 1: glm.fit: algorithm did not converge 
 # 2: glm.fit: algorithm did not converge 
@@ -152,7 +153,6 @@ comparisons <-
 ggplot(comparisons, 
          aes(x = D1)) + 
   geom_density(alpha = 0.3)
-
 
 ggplot(comparisons, 
          aes(x = D1)) + 
@@ -187,10 +187,10 @@ ggplot(comparisons,
              size = 1)
 
 # traditional D1 vs D1 using all con vs all incon
-ggplot(comparisons_2,
+ggplot(comparisons,
        aes(x = D1, 
            y = D1_all)) +
-  geom_point(alpha = .5,
+  geom_point(alpha = .1,
              shape = 16,
              size = 1)
 
